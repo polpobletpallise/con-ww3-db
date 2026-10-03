@@ -1,4 +1,4 @@
-import Logo from "@/assets/xScouting";
+import { FaGithub } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <a href="https://wiki.conflictnations.com/">Official wiki</a>
         <a href="https://forum.conflictnations.com/">Official Forum</a>
       </div>
-      <a href="https://www.xscouting.net/" aria-label="xScouting"><Logo /></a>
+      <a href="https://github.com/polpobletpallise" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><FaGithub size={24} /></a>
     </footer>
   );
 }
