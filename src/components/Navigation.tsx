@@ -1,7 +1,50 @@
 import Link from "next/link";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "./ui/navigation-menu";
 
 const navigationItems = [
-  { label: "Units", href: "/units" },
+    {
+    title: "Information and Help", links: [
+      { label: "Beginner Intro", desc: "Learn the basics of starting and managing a match.", href: "/beginner-intro" },
+      { label: "User Interface", desc: "Get familiar with the game screens and controls.", href: "/user-interface" },
+      { label: "Nations Guide", desc: "Discover playable nations and their starting positions.", href: "/nations-guide" },
+      { label: "Keyboard Shortcuts", desc: "Find shortcuts for common in-game actions.", href: "/keyboard-shortcuts" },
+      { label: "Ranks", desc: "Learn how player ranks and progression work.", href: "/ranks" },
+      { label: "FAQ", desc: "Get answers to frequently asked questions.", href: "/faq" }
+    ]
+  },
+  {
+    title: "Diplomacy", links: [
+      { label: "News", desc: "Keep up with the latest game announcements and updates.", href: "/news" },
+      { label: "Diplomatic Status", desc: "Understand relations and status between nations.", href: "/diplomatic-status" },
+      { label: "Events Log", desc: "Review the events and actions recorded during a match.", href: "/events" },
+      { label: "Messages", desc: "Learn about in-game communication and messages.", href: "/messages" },
+      { label: "Coalition", desc: "Explore coalition membership and coordination.", href: "/coalition" },
+      { label: "Alliances", desc: "Learn how alliances connect players and coalitions.", href: "/alliances" }
+    ]
+  },
+  {
+    title: "Warfare", links: [
+      { label: "Research & Doctrine", desc: "Compare research paths and doctrine bonuses.", href: "/research" },
+      { label: "Units", desc: "Browse unit stats, combat values, and terrain performance.", href: "/units" },
+      { label: "Combat", desc: "Understand combat mechanics and unit engagements.", href: "/combat" },
+      { label: "Field of View", desc: "Learn how visibility and scouting affect the battlefield.", href: "/field-of-view" },
+      { label: "Insurgencies", desc: "Find out how insurgencies emerge and affect provinces.", href: "/insurgencies" }
+    ]
+  },
+  {
+    title: "Strategy", links: [
+      { label: "Campaing Types", desc: "Compare match formats and their rules.", href: "/campaign-types" },
+      { label: "Provinces", desc: "Explore province types, resources, and strategic value.", href: "/provinces" },
+      { label: "Production", desc: "Learn how to produce units and manage resources.", href: "/production" },
+      { label: "Victory", desc: "Review victory conditions and scoring.", href: "/victory" }
+    ]
+  },
+  {
+    title: "Security Council", links: [
+      { label: "Membership", desc: "Learn about Security Council membership and benefits.", href: "/membership" },
+      { label: "Seasons", desc: "Explore seasonal content and progression.", href: "/seasons" }
+    ]
+  },
 ];
 
 export default function Navigation() {
@@ -26,17 +69,41 @@ export default function Navigation() {
           aria-label="Navigation"
           className="flex max-w-full gap-5 overflow-x-auto pb-1 text-sm text-slate-300 sm:pb-0"
         >
-          {navigationItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="shrink-0 transition-colors hover:text-red-500 focus-visible:text-red-500"
-            >
-              {item.label}
-            </Link>
-          ))}
+
+          <NavigationMenu>
+            <NavigationMenuList>
+              {navigationItems.map((item) => (
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>
+                    {item.title}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {item.links.map((link) => (
+                        <ListItem href={link.href} title={link.label}>
+                          {link.desc}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
       </div>
     </header>
   );
+}
+
+
+function ListItem({ title, children, href, ...props }: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+  return (
+    <li {...props}>
+      <NavigationMenuLink render={<Link href={href}><div className="flex flex-col gap-1 text-sm">
+        <div className="leading-none font-medium">{title}</div>
+        <div className="line-clamp-2 text-muted-foreground">{children}</div>
+      </div></Link>} />
+    </li>
+  )
 }
