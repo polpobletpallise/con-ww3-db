@@ -1,0 +1,86 @@
+import { ChevronUp, RectangleVertical, Star } from "lucide-react"
+import { GiChestnutLeaf, GiEagleEmblem } from "react-icons/gi"
+
+export interface RankInterface {
+    level: number | string
+    name: string
+    icon?: any
+    iconStyles?: string
+    unlocks?: string[]
+}
+
+export const RANKS_UNLOCK: RankInterface[] = [
+    { level: 1, name: "Recruit", unlocks: ["Infantry Veteran lvl. 1"] },
+    { level: 2, name: "Private", unlocks: ["Rotatory Wing Veteran lvl. 1", "WW3 Apocalypse (x4)"] },
+    { level: 3, name: "Private", unlocks: ["Tank Veteran lvl. 1"] },
+    { level: 4, name: "Private 2nd Class", unlocks: ["Rising Tides"] },
+    { level: 5, name: "Private 2nd Class", unlocks: ["Naval Veteran lvl. 1"] },
+    { level: 6, name: "Private 2nd Class", unlocks: ["Subamrine Veteran lvl. 1"] },
+    { level: 7, name: "Private 1st Class", unlocks: ["Airborne Veteran lvl. 1", "Rising Tides (x4)"] },
+    { level: 8, name: "Private 1st Class", unlocks: ["Overkill"] },
+    { level: 11, name: "Specialist", unlocks: ["Overkill (x4)"] },
+    { level: 13, name: "Specialist 2nd Class", unlocks: ["Rotatory Wing Veteran lvl. 2", "Z"] },
+    { level: 14, name: "Specialist 2nd Class", unlocks: ["Tank Veteran lvl. 2", "Blood and Oil", "Blood and Oil"] },
+    { level: 15, name: "Specialist 2nd Class", unlocks: ["Z (x4)"] },
+    { level: 16, name: "Specialist 1st Class", unlocks: ["Naval Veteran lvl. 2"] },
+    { level: 17, name: "Specialist 1st Class", unlocks: ["Submarine Veteran lvl. 2", "Blood and Oil (x4)"] },
+    { level: 18, name: "Specialist 1st Class", unlocks: ["Airborne Veteran lvl. 2", "Rising Sun Apocalypse"] },
+    { level: 24, name: "Lance Corporal", unlocks: ["Rotatory Wing Veteran lvl. 3"] },
+    { level: 25, name: "Corporal", unlocks: ["Tank Veteran lvl. 3"] },
+    { level: 27, name: "Corporal", unlocks: ["Naval Veteran lvl. 3"] },
+    { level: 28, name: "Corporal", unlocks: ["Submarine Veteran lvl. 3"] },
+    { level: 29, name: "Corporal", unlocks: ["Airborne Veteran lvl. 3"] },
+    { level: 35, name: "Staff Sergeant", unlocks: ["Rotatory Wing Veteran lvl. 4"] },
+    { level: 36, name: "Staff Sergeant", unlocks: ["Tank Veteran lvl. 4"] },
+    { level: 38, name: "Staff Sergeant", unlocks: ["Naval Veteran lvl. 4"] },
+    { level: 39, name: "Staff Sergeant", unlocks: ["Submarine Veteran lvl. 4"] },
+    { level: 40, name: "Gunnery Sergeant", unlocks: ["Airborne Veteran lvl. 4"] },
+    { level: 47, name: "Sergeant 1st Class", unlocks: ["Rotatory Wing Veteran lvl. 5"] },
+    { level: 48, name: "Sergeant 1st Class", unlocks: ["Tank Veteran lvl. 5"] },
+    { level: 50, name: "Master Sergeant", unlocks: ["Naval Veteran lvl. 5"] },
+    { level: 51, name: "Master Sergeant", unlocks: ["Submarine Veteran lvl. 5"] },
+    { level: 52, name: "Master Sergeant", unlocks: ["Airborne Veteran lvl. 5"] },
+    { level: 61, name: "First Sergeant", unlocks: ["Rotatory Wing Veteran lvl. 6"] },
+    { level: 62, name: "First Sergeant", unlocks: ["Tank Veteran lvl. 6"] },
+    { level: 64, name: "First Sergeant", unlocks: ["Naval Veteran lvl. 6"] },
+    { level: 65, name: "First Sergeant", unlocks: ["Submarine Veteran lvl. 6"] },
+    { level: 66, name: "First Sergeant", unlocks: ["Airborne Veteran lvl. 6"] },
+    { level: 70, name: "Sergeant Major", unlocks: ["Airborne Veteran lvl. 7"] },
+    { level: 71, name: "Sergeant Major", unlocks: ["Submarine Veteran lvl. 7"] },
+    { level: 72, name: "Sergeant Major", unlocks: ["Naval Veteran lvl. 7"] },
+    { level: 75, name: "Sergeant Major", unlocks: ["Rotatory Wing Veteran lvl. 7"] },
+]
+
+export const RANKS: RankInterface[] = [
+    { level: 1, name: "Recruit", icon: ChevronUp, iconStyles: "text-zinc-500" },
+    { level: "2-3", name: "Private", icon: ChevronUp, iconStyles: "text-white" },
+    { level: "4-6", name: "Private 2nd Class", icon: ChevronUp, iconStyles: "text-amber-500" },
+    { level: "7-9", name: "Private 1st Class" },
+    { level: "10-12", name: "Specialist" },
+    { level: "13-15", name: "Specialist 2nd Class" },
+    { level: "16-19", name: "Specialist 1st Class" },
+    { level: "20-24", name: "Lance Corporal" },
+    { level: "25-29", name: "Corporal" },
+    { level: "30-34", name: "Sergeant" },
+    { level: "35-39", name: "Staff Sergeant" },
+    { level: "40-44", name: "Gunnery Sergeant" },
+    { level: "45-49", name: "Sergeant 1st Class" },
+    { level: "50-59", name: "Master Sergeant" },
+    { level: "60-69", name: "First Sergeant" },
+    { level: "70-79", name: "Sergeant Major" },
+    { level: "80-89", name: "Warrant Officer" },
+    { level: "90-99", name: "Chief Warrant Officer" },
+    { level: "100-109", name: "Second Lieutenant", icon: RectangleVertical, iconStyles: "text-amber-500 fill-amber-500" },
+    { level: "110-119", name: "First Lieutenant", icon: RectangleVertical, iconStyles: "text-zinc-400 fill-zinc-400" },
+    { level: "110-119", name: "First Lieutenant" },
+    { level: "120-129", name: "Captain" },
+    { level: "130-139", name: "Major", icon: GiChestnutLeaf, iconStyles: "size-6 text-amber-400 fill-amber-400" },
+    { level: "140-149", name: "Lieutenant Colonel", icon: GiChestnutLeaf, iconStyles: "size-6 text-zinc-400 fill-zinc-400" },
+    { level: "150-159", name: "Colonel", icon: GiEagleEmblem, iconStyles: "size-6 text-zinc-400 fill-zinc-400" },
+    { level: "160-169", name: "Brigadier General", icon: Star, iconStyles: "text-zinc-400 fill-zinc-400" },
+    { level: "170-179", name: "Major General" },
+    { level: "180-189", name: "Lieutenant General" },
+    { level: "190-199", name: "General" },
+    { level: "200-209", name: "General of the Army" },
+    { level: "210-220", name: "Commander-in-Chief" },
+]

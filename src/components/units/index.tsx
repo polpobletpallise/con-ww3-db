@@ -15,7 +15,7 @@ export default function Units() {
 
     return (
         <div>
-            <main className="p-10 flex flex-col gap-10">
+            <section className="p-10 flex flex-col gap-10">
                 {getInfantry().map((inf, idx: number) => {
                     return (
                         <div
@@ -140,7 +140,7 @@ export default function Units() {
                         </div>
                     )
                 })}
-            </main>
+            </section>
         </div>
     )
 }

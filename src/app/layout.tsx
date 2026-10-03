@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/next";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -54,12 +55,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cn("h-full scroll-smooth antialiased", "font-sans", geist.variable)}>
+    <html
+      lang="en"
+      className={cn("h-full scroll-smooth antialiased", "font-sans", geist.variable)}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <body className="flex min-h-full flex-col">
         <ThemeProvider defaultTheme="dark" attribute={'class'}>
           <Navigation />
           {children}
           <Footer />
+
+          {/* VERCEL */}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

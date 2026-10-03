@@ -26,7 +26,7 @@ const navigationItems = [
   {
     title: "Warfare", links: [
       { label: "Research & Doctrine", desc: "Compare research paths and doctrine bonuses.", href: "/research", icon: Microscope },
-      { label: "Units", desc: "Browse unit stats, combat values, and terrain performance.", href: "/units", icon: HardHat },
+      { label: "Unit Overview", desc: "Browse unit stats, combat values, and terrain performance.", href: "/units", icon: HardHat },
       { label: "Combat", desc: "Understand combat mechanics and unit engagements.", href: "/combat", icon: Cog },
       { label: "Field of View", desc: "Learn how visibility and scouting affect the battlefield.", href: "/field-of-view", icon: CircleGauge },
       { label: "Insurgencies", desc: "Find out how insurgencies emerge and affect provinces.", href: "/insurgencies", icon: HandFist }
