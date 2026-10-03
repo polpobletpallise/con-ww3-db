@@ -9,7 +9,8 @@ npm ci
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000).
+Abre [http://localhost:3000](http://localhost:3000). El prefijo `/con-ww3-db`
+se aplica solo en producción para GitHub Pages.
 
 ## Publicación en GitHub Pages
 

@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/con-ww3-db",
+  basePath: process.env.NODE_ENV === "production" ? "/con-ww3-db" : undefined,
   trailingSlash: true,
   images: {
     unoptimized: true,
